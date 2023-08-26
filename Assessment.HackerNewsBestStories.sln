@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assessment.HackerNewsBestStories.API", "src\Assessment.HackerNewsBestStories.API\Assessment.HackerNewsBestStories.API.csproj", "{04891B24-AD62-48D9-B2DE-017258AA2B6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1755614A-9E80-4EBB-95C5-88CD37F3BB5A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assessment.HackerNewsBestStories.FunctionalTests", "tests\Assessment.HackerNewsBestStories.FunctionalTests\Assessment.HackerNewsBestStories.FunctionalTests.csproj", "{ECD329F1-DDFA-41D8-8EA6-8F9503D5FB3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{86C87AAB-889F-4326-A92E-85AA587B157C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Dockerfile = Dockerfile
+		scripts\HackerNewsAPI.http = scripts\HackerNewsAPI.http
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04891B24-AD62-48D9-B2DE-017258AA2B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04891B24-AD62-48D9-B2DE-017258AA2B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04891B24-AD62-48D9-B2DE-017258AA2B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04891B24-AD62-48D9-B2DE-017258AA2B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECD329F1-DDFA-41D8-8EA6-8F9503D5FB3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD329F1-DDFA-41D8-8EA6-8F9503D5FB3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD329F1-DDFA-41D8-8EA6-8F9503D5FB3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD329F1-DDFA-41D8-8EA6-8F9503D5FB3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ECD329F1-DDFA-41D8-8EA6-8F9503D5FB3C} = {1755614A-9E80-4EBB-95C5-88CD37F3BB5A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AD8FEDC-8805-4E04-BCA2-051150A58737}
+	EndGlobalSection
+EndGlobal

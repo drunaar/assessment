@@ -1,0 +1,5 @@
+### Get best stories IDs (up to 200)
+GET https://hacker-news.firebaseio.com/v0/beststories.json
+
+###
+GET https://hacker-news.firebaseio.com/v0/item/37247678.json
