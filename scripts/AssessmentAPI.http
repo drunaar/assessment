@@ -1,0 +1,6 @@
+
+@hostname=localhost
+@port=32780
+
+###
+GET http://{{hostname}}:{{port}}/beststories?top=20

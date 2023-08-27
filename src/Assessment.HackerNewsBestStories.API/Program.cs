@@ -1,20 +1,25 @@
+using Assessment.HackerNewsBestStories.API.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+services.AddControllers()
+    .AddJsonOptions(options => {
+        options.JsonSerializerOptions
+            .Converters.Add(new CustomDateTimeConverter("yyyy-MM-ddTHH:mm:ssK"));
+    });
+services.AddEndpointsApiExplorer();
+services.AddSwaggerGen(options => {
+    options.SupportNonNullableReferenceTypes();
+});
+services.AddMediatR(config => {
+    config.RegisterServicesFromAssemblyContaining<Program>();
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment()) {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+app.UseSwagger();
+app.UseSwaggerUI();
 app.MapControllers();
 
 app.Run();

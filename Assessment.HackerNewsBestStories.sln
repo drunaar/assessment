@@ -13,6 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".http scripts", ".http scripts", "{39839987-AFE2-4CA1-90FB-CD73D64BC0AE}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\AssessmentAPI.http = scripts\AssessmentAPI.http
 		scripts\HackerNewsAPI.http = scripts\HackerNewsAPI.http
 	EndProjectSection
 EndProject
@@ -36,6 +41,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{ECD329F1-DDFA-41D8-8EA6-8F9503D5FB3C} = {1755614A-9E80-4EBB-95C5-88CD37F3BB5A}
+		{39839987-AFE2-4CA1-90FB-CD73D64BC0AE} = {86C87AAB-889F-4326-A92E-85AA587B157C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5AD8FEDC-8805-4E04-BCA2-051150A58737}
