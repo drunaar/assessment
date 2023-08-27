@@ -1,5 +1,3 @@
-using Assessment.HackerNewsBestStories.API.Infrastructure;
-
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
@@ -15,6 +13,13 @@ services.AddSwaggerGen(options => {
 services.AddMediatR(config => {
     config.RegisterServicesFromAssemblyContaining<Program>();
 });
+services.AddRefitClient<IHackerNewsAPI>()
+    .ConfigureHttpClient(client => {
+        client.BaseAddress = new Uri("https://hacker-news.firebaseio.com");
+    })
+    .AddPolicyHandler(Policy.BulkheadAsync<HttpResponseMessage>(5, 300));
+
+TypeAdapterConfig.GlobalSettings.Apply(new MappingsProfile());
 
 var app = builder.Build();
 

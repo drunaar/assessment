@@ -2,4 +2,4 @@
 GET https://hacker-news.firebaseio.com/v0/beststories.json
 
 ###
-GET https://hacker-news.firebaseio.com/v0/item/37247678.json
+GET https://hacker-news.firebaseio.com/v0/item/37262440.json
