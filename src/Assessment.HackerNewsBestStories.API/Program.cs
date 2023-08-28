@@ -1,6 +1,14 @@
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
+var memoryCache = new MemoryCache(new MemoryCacheOptions());
+var cacheProvider = new MemoryCacheProvider(memoryCache);
+
+var policies = services.AddPolicyRegistry();
+policies.Add("StandardBulkheadPolicy", Policy.BulkheadAsync<HttpResponseMessage>(10, 3000));
+policies.Add(GetBestStoriesHandler.HackerNewsCachePolicyKey,
+    Policy.CacheAsync(cacheProvider.AsyncFor<HackerNewsItem>(), TimeSpan.FromMinutes(3)));
+
 services.AddControllers()
     .AddJsonOptions(options => {
         options.JsonSerializerOptions
@@ -17,7 +25,7 @@ services.AddRefitClient<IHackerNewsAPI>()
     .ConfigureHttpClient(client => {
         client.BaseAddress = new Uri("https://hacker-news.firebaseio.com");
     })
-    .AddPolicyHandler(Policy.BulkheadAsync<HttpResponseMessage>(5, 300));
+    .AddPolicyHandlerFromRegistry("StandardBulkheadPolicy");
 
 TypeAdapterConfig.GlobalSettings.Apply(new MappingsProfile());
 

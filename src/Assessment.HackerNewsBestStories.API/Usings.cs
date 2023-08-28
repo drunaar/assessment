@@ -1,12 +1,17 @@
 ﻿global using Assessment.HackerNewsBestStories.API.Application.DTOs;
+global using Assessment.HackerNewsBestStories.API.Application.Handlers;
 global using Assessment.HackerNewsBestStories.API.Application.Queries;
 global using Assessment.HackerNewsBestStories.API.Infrastructure;
 global using Assessment.HackerNewsBestStories.API.Infrastructure.Models;
 global using Mapster;
 global using MediatR;
 global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.Extensions.Caching.Memory;
 global using Polly;
+global using Polly.Caching;
+global using Polly.Caching.Memory;
 global using Refit;
 global using System.Globalization;
+global using System.Net;
 global using System.Text.Json;
 global using System.Text.Json.Serialization;
